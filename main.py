@@ -1,9 +1,20 @@
 from fastapi import FastAPI
-from database import engine, Base
-from routers import produtos
 
-# Cria as tabelas no SQLite caso ainda não existam
-Base.metadata.create_all(bind=engine)
+from database import Base, engine
+from routers.produtos import router as produtos_router
 
-app = FastAPI(title="API de Estoque de Alimentos")
-app.include_router(produtos.router)
+
+def criar_tabelas():
+    """Cria as tabelas do banco de dados caso ainda não existam."""
+    Base.metadata.create_all(bind=engine)
+
+
+criar_tabelas()
+
+app = FastAPI(
+    title="API de Gestão de Estoque",
+    description="API para gerenciamento de produtos em estoque.",
+    version="1.0.0"
+)
+
+app.include_router(produtos_router)
