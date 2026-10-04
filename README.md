@@ -42,3 +42,5 @@ Documentação interativa: http://127.0.0.1:8000/docs
   "ativo": true
 }
 ```
+## Histórico de desenvolvimento
+Projeto desenvolvido passo a passo com FastAPI, Pydantic e SQLAlchemy.
