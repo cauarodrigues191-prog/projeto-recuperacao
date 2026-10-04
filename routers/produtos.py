@@ -37,8 +37,9 @@ def listar_produtos(
 ):
     query = db.query(Produto)
 
+    # O filtro por categoria não diferencia maiúsculas de minúsculas.
     if categoria:
-        query = query.filter(Produto.categoria == categoria)
+        query = query.filter(Produto.categoria.ilike(categoria))
 
     if ativo is not None:
         query = query.filter(Produto.ativo == ativo)
