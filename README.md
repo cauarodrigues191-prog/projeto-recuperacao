@@ -29,7 +29,7 @@ Documentação interativa: http://127.0.0.1:8000/docs
 | GET | /produtos/?categoria=&ativo= | Lista com filtros opcionais | 200 |
 | PUT | /produtos/{id} | Atualiza todos os campos | 200 / 404 |
 | DELETE | /produtos/{id} | Remove produto | 200 / 404 |
-
+| GET | /produtos/{id} | Busca produto por ID | 200 / 404 |
 ## Exemplo de corpo (POST/PUT)
 
 ```json
