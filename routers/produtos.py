@@ -59,7 +59,7 @@ def buscar_produto(
 
     if not produto:
         raise HTTPException(
-            status_code=404,
+            status_code=status.HTTP_404_NOT_FOUND,
             detail="Produto não encontrado"
         )
 
@@ -80,7 +80,7 @@ def atualizar_produto(
 
     if not produto:
         raise HTTPException(
-            status_code=404,
+            status_code=status.HTTP_404_NOT_FOUND,
             detail="Produto não encontrado"
         )
 
@@ -106,7 +106,7 @@ def deletar_produto(
 
     if not produto:
         raise HTTPException(
-            status_code=404,
+            status_code=status.HTTP_404_NOT_FOUND,
             detail="Produto não encontrado"
         )
 
